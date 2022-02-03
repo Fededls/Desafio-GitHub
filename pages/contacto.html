@@ -2,16 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Electro-Shop</title>
     <!--Incluyendo Favicon-->
     <link rel="shortcut icon" href="../images/favicon.ico">
     <!--Incluyendo CSS externo-->
     <link rel="stylesheet" href="../css/estilos.css"/>
 </head>
-<body id="gridAreas">
+<body id="gridAreasOfertas">
     <!--Header del sitio-->
     <header class="border">
-        <h1 class="tituloGrande">ElectroShop</h1>
+        <h1 class="tituloDegradadoAnimado">ElectroShop</h1>
     </header>
      <!--Menu principal-->
      <nav class="border, flexMenu">
@@ -42,30 +43,46 @@
     </aside>
     <!--Sector central-->
     <section id="central" class="gridCentralSections">
-        <div>
-            <a href="../pages/oferta1.html"><img src="../images/oferta1.jpg" alt="Oferta1"></a>
-            <p class="subtitleProd">Tv Smart 32 - $7900</p>
-        </div>
-        <div>
-            <a href="../pages/oferta1.html"><img src="../images/oferta1.jpg" alt="Oferta1"></a>
-            <p class="subtitleProd">Tv Smart 32 - $7900</p>
-        </div>
-        <div>
-            <a href="../pages/oferta1.html"><img src="../images/oferta1.jpg" alt="Oferta1"></a>
-            <p class="subtitleProd">Tv Smart 32 - $7900</p>
-        </div>
-        <div>
-            <a href="../pages/oferta1.html"><img src="../images/oferta1.jpg" alt="Oferta1"></a>
-            <p class="subtitleProd">Tv Smart 32 - $7900</p>
-        </div>
-        <div>
-            <a href="../pages/oferta1.html"><img src="../images/oferta1.jpg" alt="Oferta1"></a>
-            <p class="subtitleProd">Tv Smart 32 - $7900</p>
-        </div>
-        <div>
-            <a href="../pages/oferta1.html"><img src="../images/oferta1.jpg" alt="Oferta1"></a>
-            <p class="subtitleProd">Tv Smart 32 - $7900</p>
-        </div>
+        <form action="contactoSet.html">
+            <fieldset>
+                <legend>Información personal</legend><br>
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" placeholder="Nombre"><br>
+                <label for="apellido">Apellido:</label>
+                <input type="text" name="apellido" placeholder="Apellido"><br>
+                <label for="genero">Genero:</label>
+                <select name="genero">
+                    <option value=""></option>
+                    <option value="M">Masculino</option>
+                    <option value="F">Femenino</option>
+                    <option value="I">Indiferente</option>
+                </select><br>
+                <label for="email">Correo:</label>
+                <input type="text" name="correo" placeholder="Correo"><br>
+                <label for="consulta">Consulta:</label><br>
+                <textarea name="consulta" cols="40" rows="5"></textarea>
+            </fieldset>
+            <fieldset>
+                <legend>Intereses</legend><br>
+                <span>Imagen y sonido</span>
+                <input type="checkbox" name="imagen" value="1">&nbsp;&nbsp;
+                <span>Climatización</span>
+                <input type="checkbox" name="clima" value="2">&nbsp;&nbsp;
+                <span>Hogar</span>
+                <input type="checkbox" name="hogar" value="3">&nbsp;&nbsp;
+                <span>Otros</span>
+                <input type="checkbox" name="otros" value="4">&nbsp;&nbsp;
+            </fieldset>
+            <fieldset>
+                <legend>Desea recibir ofertas por Mail?</legend><br>
+                <span>SI</span>
+                <input type="radio" name="ofertas" value="SI">
+                <span>NO</span>
+                <input type="radio" name="ofertas" value="NO">
+            </fieldset>
+            <br>
+            <input type="submit" value="Enviar">
+        </form>     
     </section>
     <!--Sector Info y publicidad-->
     <aside id="pubkicidad1" class="border">
