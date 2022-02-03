@@ -76,8 +76,76 @@ section div img{
 section h3{
     color:orangered;
 }
-
-
+/*Animación*/
+.ofertaAnimada1{
+    animation-name: tipo1;
+    animation-iteration-count: 1;
+    animation-duration: 5s;
+}
+.ofertaAnimada2{
+    animation-name: tipo2;
+    animation-iteration-count: 1;
+    animation-duration: 5s;
+}
+.ofertaAnimada3{
+    animation-name: tipo3;
+    animation-iteration-count: 1;
+    animation-duration: 5s;
+}
+.ofertaAnimada4{
+    animation-name: tipo4;
+    animation-iteration-count: 1;
+    animation-duration: 5s;
+}
+/*Keyframes para iniciar animación*/
+@keyframes tipo1{
+    /*Estructura compleja*/
+    0%/*inicio*/{
+        transform: translate(-500px, -500px);
+        border-radius: 100%;
+    }
+    20%{border-radius: 80%;}
+    40%{border-radius: 60%;}
+    60%{border-radius: 40%;}
+    80%{border-radius: 20%;}
+    100%{border-radius: 5%;}
+}
+@keyframes tipo2{
+    /*Estructura compleja*/
+    0%/*inicio*/{
+        transform: translate(500px, -500px);
+        border-radius: 100%;
+    }
+    20%{border-radius: 80%;}
+    40%{border-radius: 60%;}
+    60%{border-radius: 40%;}
+    80%{border-radius: 20%;}
+    100%{border-radius: 5%;}
+}
+@keyframes tipo3{
+    /*Estructura compleja*/
+    0%/*inicio*/{
+        transform: translate(-500px, 500px);
+        border-radius: 100%;
+    }
+    20%{border-radius: 80%;}
+    40%{border-radius: 60%;}
+    60%{border-radius: 40%;}
+    80%{border-radius: 20%;}
+    100%{border-radius: 5%;}
+}
+@keyframes tipo4{
+    /*Estructura compleja*/
+    0%/*inicio*/{
+        transform: translate(500px, 500px);
+        border-radius: 100%;
+    }
+    20%{border-radius: 80%;}
+    40%{border-radius: 60%;}
+    60%{border-radius: 40%;}
+    80%{border-radius: 20%;}
+    100%{border-radius: 5%;}
+}
 /*----RESPONSIVE----*/
 /*DESKTOP*/
 @media (min-width: 1024px){
@@ -125,9 +193,32 @@ section h3{
         grid-column-gap: 4px;
         grid-row-gap: 4px;
     }
+    /*titulo degradado animado*/
+    .tituloDegradadoAnimado {
+        font-size: 1.7rem;
+        background: linear-gradient(-45deg, darkred, red, blue, darkblue);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation-name: titulo1;
+        animation-iteration-count: 1;
+        animation-duration: 5s;
+    }
+    /*Animación*/
+    @keyframes titulo1{
+        /*Estructura simple*/
+
+        from/*inicio*/{
+            transform: translate(-200px);
+            opacity: 0;
+        }
+        to /*final*/{
+            transform: translate(0);
+            opacity: 1;
+        }
+    } 
     .tituloGrande{
-        font-size: 22px;
-        color: rgb(206, 6, 6);
+        font-size: 5x;
         text-orientation: sideways-right;
     }
     /*Menu principal*/
@@ -270,6 +361,30 @@ section h3{
         grid-column-gap: 4px;
         grid-row-gap: 4px;
     }
+    /*titulo degradado animado*/
+    .tituloDegradadoAnimado {
+        font-size: 1.7rem;
+        background: linear-gradient(-45deg, greenyellow, green, orange, orangered);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation-name: titulo1;
+        animation-iteration-count: 1;
+        animation-duration: 5s;
+    }
+    /*Animación*/
+    @keyframes titulo1{
+        /*Estructura simple*/
+
+        from/*inicio*/{
+            transform: translate(-200px);
+            opacity: 0;
+        }
+        to /*final*/{
+            transform: translate(0);
+            opacity: 1;
+        }
+    } 
     .tituloGrande{
         font-size: 18px;
         color: rgb(206, 6, 6);
@@ -422,6 +537,29 @@ section h3{
         grid-column-gap: 0px;
         grid-row-gap: 0px;
     }
+    .tituloDegradadoAnimado {
+        font-size: 2rem;
+        background: linear-gradient(80deg, yellow,orange,darkred);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation-name: titulo1;
+        animation-iteration-count: 1;
+        animation-duration: 8s;
+    }
+    /*Animación*/
+    @keyframes titulo1{
+        /*Estructura simple*/
+
+        from/*inicio*/{
+            transform: translate(-200px);
+            opacity: 0;
+        }
+        to /*final*/{
+            transform: translate(0);
+            opacity: 1;
+        }
+    } 
     .tituloGrande{
         font-size: 22px;
         color: rgb(206, 6, 6);
