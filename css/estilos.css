@@ -18,13 +18,12 @@
  /*Nombrar las areas*/
 header{
     grid-area: logo;
-    background-color:lightskyblue;
+    background-image: linear-gradient(#1883ba, lightskyblue);
     text-align: center;
     padding: 5px;
 }
 #central{
     grid-area: productos;
-    background-color:rgb(231, 241, 188);
     padding: 2px;
 }
 #publicidad1{
@@ -122,20 +121,30 @@ fieldset span{
 .ofertaAnimada1{
     animation-name: tipo1;
     animation-iteration-count: 1;
-    animation-duration: 5s;
+    animation-duration: 4s;
 }
 .ofertaAnimada2{
     animation-name: tipo2;
     animation-iteration-count: 1;
-    animation-duration: 5s;
+    animation-duration: 4s;
 }
 .ofertaAnimada3{
     animation-name: tipo3;
     animation-iteration-count: 1;
-    animation-duration: 5s;
+    animation-duration: 4s;
 }
 .ofertaAnimada4{
     animation-name: tipo4;
+    animation-iteration-count: 1;
+    animation-duration: 4s;
+}
+.bannerAnimado1{
+    animation-name: banner1;
+    animation-iteration-count: 1;
+    animation-duration: 5s;
+}
+.bannerAnimado2{
+    animation-name: banner2;
     animation-iteration-count: 1;
     animation-duration: 5s;
 }
@@ -143,7 +152,7 @@ fieldset span{
 @keyframes tipo1{
     /*Estructura compleja*/
     0%/*inicio*/{
-        transform: translate(-500px, -500px);
+        transform: translate(-300px, -300px);
         border-radius: 100%;
     }
     20%{border-radius: 80%;}
@@ -155,7 +164,7 @@ fieldset span{
 @keyframes tipo2{
     /*Estructura compleja*/
     0%/*inicio*/{
-        transform: translate(500px, -500px);
+        transform: translate(300px, -300px);
         border-radius: 100%;
     }
     20%{border-radius: 80%;}
@@ -167,7 +176,7 @@ fieldset span{
 @keyframes tipo3{
     /*Estructura compleja*/
     0%/*inicio*/{
-        transform: translate(-500px, 500px);
+        transform: translate(-300px, 300px);
         border-radius: 100%;
     }
     20%{border-radius: 80%;}
@@ -179,7 +188,7 @@ fieldset span{
 @keyframes tipo4{
     /*Estructura compleja*/
     0%/*inicio*/{
-        transform: translate(500px, 500px);
+        transform: translate(300px, 300px);
         border-radius: 100%;
     }
     20%{border-radius: 80%;}
@@ -188,6 +197,15 @@ fieldset span{
     80%{border-radius: 20%;}
     100%{border-radius: 5%;}
 }
+/*Transiciones*/
+.formaProducto{
+    transition: all, 0.5s;
+}
+.formaProducto:hover{
+    border-radius: 50%;
+    border: solid 2px darkblue;
+}
+
 
 /*----RESPONSIVE----*/
 /*DESKTOP*/
@@ -197,7 +215,8 @@ fieldset span{
         height: 100vh;
         margin: 5px;
         font-family:"Arvo", sans-serif;
-        background-color:khaki;   
+        background-color:goldenrod; 
+        background-image: linear-gradient(to bottom, goldenrod, khaki, goldenrod);  
     }
     body section span{
         justify-self:center;
@@ -283,27 +302,23 @@ fieldset span{
     }
      /*titulo degradado animado*/
      .tituloDegradadoAnimado {
-        font-size: 1.7rem;
-        background: linear-gradient(-45deg, darkred, red, blue, darkblue);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        animation-name: titulo1;
-        animation-iteration-count: 1;
-        animation-duration: 5s;
+    font-size: 1.7rem;
+    animation-name: radiacion;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    background: linear-gradient(-45deg, darkred, red, blue, darkblue);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     }
     /*Animación*/
-    @keyframes titulo1{
-        /*Estructura simple*/
-        from/*inicio*/{
-            transform: translate(-200px);
-            opacity: 0;
-        }
-        to /*final*/{
-            transform: translate(0);
-            opacity: 1;
-        }
-    } 
+    @keyframes radiacion {
+        0% { background-position: 0 50% }
+        50% { background-position: 100% 50% }
+        100% { background-position: 0 50% }
+    }
     .tituloGrande{
         font-size: 22px;
         color: rgb(206, 6, 6);
@@ -312,7 +327,7 @@ fieldset span{
     /*Menu principal*/
     nav{
         grid-area: menu;
-        background-color:lightskyblue;  
+        background-image: linear-gradient(#1883ba, lightskyblue);
         padding: 5px;
         font-size: 15px;
     }
@@ -372,12 +387,14 @@ fieldset span{
         grid-template-columns: 2fr 2fr;
         grid-template-rows: 2fr 38fr 11fr 38fr 11fr;
         border: 4px solid gray;
+        background-image: radial-gradient(gray, white);
     }
     .gridCentralSections{
         display: grid;
         grid-template-columns:repeat(3, 33fr);
         justify-self: center;
         border: 4px solid gray;
+        background-image: radial-gradient(gray, white);
         width: 100%;
     }
     .gridCentralProductos{
@@ -386,6 +403,7 @@ fieldset span{
         grid-template-rows:3% 22% 3% 22% 3% 22% 3% 22% ;
         justify-self: center;
         border: 4px solid gray;
+        background-image: radial-gradient(gray, white);
         width: 100%;
     }
     .gridCentralArticulos{
@@ -394,6 +412,7 @@ fieldset span{
         grid-template-rows: 1fr 1fr;
         justify-self: center;
         border: 4px solid gray;
+        background-image: radial-gradient(gray, white);
         width: 100%;
     }
     .gridCentralSimple{
@@ -402,6 +421,7 @@ fieldset span{
         grid-template-rows: 1fr 1fr 1fr;
         justify-self: center;
         border: 4px solid gray;
+        background-image: radial-gradient(gray, white);
         width: 100%;
     }
     .gridCentralEmpresa{
@@ -410,6 +430,7 @@ fieldset span{
         grid-template-rows: 33% 33% 33%;
         justify-self: center;
         border: 4px solid gray;
+        background-image: radial-gradient(gray, white);
         width: 100%;
     }
     /*Formato de contenido central*/
@@ -459,10 +480,28 @@ fieldset span{
         width: 400px;
         height: 100px;
     }
+    .gradienteCentral{
+        background-image: radial-gradient(white, gray);
+    }
+    /*Animación*/
+    @keyframes banner1{
+        /*Estructura compleja*/
+        0%/*inicio*/{
+            transform: translate(800px);
+            width: 150%;
+        }
+    }
+    @keyframes banner2{
+        /*Estructura compleja*/
+        0%/*inicio*/{
+            transform: translate(-1500px);
+            width: 150%;
+        }
+    }
     /*Pie de pagina*/
     footer{
         grid-area: pie;
-        background-color:lightskyblue;
+        background-image: linear-gradient(lightskyblue, #1883ba);
         text-align: center;
 
     }
@@ -475,7 +514,7 @@ fieldset span{
         height: 100vh;
         margin: 5px;
         font-family:"Arvo", sans-serif;
-        background-color:greenyellow;   
+        background-image: linear-gradient(to bottom, limegreen, greenyellow, limegreen);    
     }
     body section span{
         justify-self:center;
@@ -546,27 +585,24 @@ fieldset span{
     }
     /*titulo degradado animado*/
     .tituloDegradadoAnimado {
-        font-size: 1.7rem;
-        background: linear-gradient(-45deg, greenyellow, green, orange, orangered);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        animation-name: titulo1;
-        animation-iteration-count: 1;
-        animation-duration: 5s;
+    font-size: 1.8rem;
+    animation-name: radiacion;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    /* animation: fluido 5s ease-in-out infinite; */
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     }
     /*Animación*/
-    @keyframes titulo1{
-        /*Estructura simple*/
-        from/*inicio*/{
-            transform: translate(-200px);
-            opacity: 0;
-        }
-        to /*final*/{
-            transform: translate(0);
-            opacity: 1;
-        }
-    } 
+    @keyframes radiacion {
+        0% { background-position: 0 50% }
+        50% { background-position: 100% 50% }
+        100% { background-position: 0 50% }
+    }
     .tituloGrande{
         font-size: 18px;
         color: rgb(206, 6, 6);
@@ -575,7 +611,7 @@ fieldset span{
     /*Menu principal*/
     nav{
         grid-area: menu;
-        background-color:lightskyblue;  
+        background-image: linear-gradient(#1883ba, lightskyblue);  
         padding: 3px;
         font-size: 12px;
     }
@@ -635,6 +671,7 @@ fieldset span{
         grid-template-columns: 2fr 2fr;
         grid-template-rows: 40fr 10fr 40fr 10fr;
         border: 2px solid red;
+        background-image: radial-gradient(gray, white);
     }
     .gridCentralProductos{
         display: grid;
@@ -642,6 +679,7 @@ fieldset span{
         grid-template-rows:3% 22% 3% 22% 3% 22% 3% 22% ;
         justify-self: center;
         border: 4px solid gray;
+        background-image: radial-gradient(gray, white);
         width: 100%;
     }
     .gridCentralSections{
@@ -649,6 +687,7 @@ fieldset span{
         grid-template-columns:repeat(3, 33fr);
         justify-self: center;
         border: 2px solid red;
+        background-image: radial-gradient(gray, white);
         width: 100%;
     }
     .gridCentralArticulos{
@@ -657,7 +696,7 @@ fieldset span{
         grid-template-rows: 1fr 1fr 1fr;
         justify-self: center;
         border: 2px solid red;
-        border: 4px solid :midnightblue;
+        background-image: radial-gradient(gray, white);
         width: 100%;
     }
     .gridCentralSimple{
@@ -666,6 +705,7 @@ fieldset span{
         grid-template-rows: 1fr 1fr 1fr;
         justify-self: center;
         border: 4px solid gray;
+        background-image: radial-gradient(gray, white);
         width: 100%;
     }
     /*Formato de contenido central*/
@@ -715,10 +755,25 @@ fieldset span{
         width: 400px;
         height: 80px;
     }
+     /*Animación*/
+     @keyframes banner1{
+        /*Estructura compleja*/
+        0%/*inicio*/{
+            transform: translate(800px);
+            width: 150%;
+        }
+    }
+    @keyframes banner2{
+        /*Estructura compleja*/
+        0%/*inicio*/{
+            transform: translate(-1500px);
+            width: 150%;
+        }
+    }
     /*Pie de pagina*/
     footer{
         grid-area: pie;
-        background-color:grey;
+        background-image: linear-gradient(lightskyblue, #1883ba);
         text-align: center;
 
     }
@@ -731,7 +786,8 @@ fieldset span{
         height: 100vh;
         margin: 0px;
         font-family:"Arvo", sans-serif;
-        background-color:mediumpurple  
+        background-color:orchid  ;
+        background-image: linear-gradient(to bottom, mediumpurple, orchid, mediumpurple);    
     }
     body section span{
         justify-self:center;
@@ -814,27 +870,23 @@ fieldset span{
         grid-row-gap: 2px;
     }
     .tituloDegradadoAnimado {
-        font-size: 2rem;
-        background: linear-gradient(80deg, yellow,orange,darkred);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        animation-name: titulo1;
-        animation-iteration-count: 1;
-        animation-duration: 8s;
+    font-size: 2rem;
+    animation-name: radiacion;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    background: linear-gradient(80deg, yellow,orange,darkred);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     }
     /*Animación*/
-    @keyframes titulo1{
-        /*Estructura simple*/
-        from/*inicio*/{
-            transform: translate(-200px);
-            opacity: 0;
-        }
-        to /*final*/{
-            transform: translate(0);
-            opacity: 1;
-        }
-    } 
+    @keyframes radiacion {
+        0% { background-position: 0 50% }
+        50% { background-position: 100% 50% }
+        100% { background-position: 0 50% }
+    }
     .tituloGrande{
         font-size: 22px;
         color: rgb(206, 6, 6);
@@ -843,7 +895,7 @@ fieldset span{
      /*Menu principal*/
      nav{
         grid-area: menu;
-        background-color:lightskyblue;  
+        background-image: linear-gradient(#1883ba, lightskyblue);  
         padding: 0px;
         font-size: 12px;
     }
@@ -902,6 +954,7 @@ fieldset span{
         justify-self: center;
         grid-template-columns: 1fr 1fr;
         border: 2px solid red;
+        background-image: radial-gradient(white, rgb(255, 255, 166));
     }
     .gridCentralProductos{
         display: grid;
@@ -909,6 +962,7 @@ fieldset span{
         grid-template-rows:3% 22% 3% 22% 3% 22% 3% 22% ;
         justify-self: center;
         border: 4px solid gray;
+        background-image: radial-gradient(white, rgb(255, 255, 166));
         width: 100%;
     }
     .gridCentralSections{
@@ -917,6 +971,7 @@ fieldset span{
         grid-template-rows: 1fr;
         justify-self: center;
         border: 2px solid red;
+        background-image: radial-gradient(white, rgb(255, 255, 166));
         width: 100%;
         font-size: 20px;
     }
@@ -926,6 +981,7 @@ fieldset span{
         grid-template-rows: 1fr 2fr;
         justify-self: center;
         border: 4px solid midnightblue;
+        background-image: radial-gradient(white, rgb(255, 255, 166));
         width: 100%;
     }
     .gridCentralSimple{
@@ -934,6 +990,7 @@ fieldset span{
         grid-template-rows: 1fr 1fr 1fr;
         justify-self: center;
         border: 4px solid gray;
+        background-image: radial-gradient(white, rgb(255, 255, 166));
         width: 100%;
     }
     /*Formato de contenido central*/
@@ -984,10 +1041,25 @@ fieldset span{
         width: 200px;
         height: 50px;
     }
+     /*Animación*/
+     @keyframes banner1{
+        /*Estructura compleja*/
+        0%/*inicio*/{
+            transform: translate(300px);
+            width: 150%;
+        }
+    }
+    @keyframes banner2{
+        /*Estructura compleja*/
+        0%/*inicio*/{
+            transform: translate(-700px);
+            width: 150%;
+        }
+    }
     /*Pie de pagina*/
     footer{
         grid-area: pie;
-        background-color:lightskyblue;
+        background-image: linear-gradient(lightskyblue, #1883ba);
         text-align: center;
         font-size: 16px;
 
